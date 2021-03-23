@@ -1,7 +1,7 @@
 # mcryptZero
 Encryption and Decryption with rotate bit randomize.
 
-*This project is developmented for personal usage - You can use by your own risk and purpose !!!*
+*This project is developed for personal used - You can use it by your own risk and purpose !!!*
 
 **Example Usage**
 
