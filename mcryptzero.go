@@ -6,6 +6,10 @@ import (
 	"time"
 )
 
+var (
+	randomx *rand.Rand = rand.New(rand.NewSource(time.Now().UnixNano()))
+)
+
 func roR(b byte) byte {
 	if (b % 2) == 0 {
 		return b >> 1
@@ -107,11 +111,7 @@ func SID(n int) string {
 	salt := "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	output := ""
 	for i := 0; i < n; i++ {
-		output = output + string(salt[rand.Intn(len(salt))])
+		output = output + string(salt[randomx.Intn(len(salt))])
 	}
 	return output
-}
-
-func init() {
-	rand.Seed(time.Now().Unix())
 }
