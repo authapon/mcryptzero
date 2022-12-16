@@ -56,7 +56,7 @@ func Encrypt(data, key []byte) []byte {
 	dummy2 := byte(0)
 	dummy3 := byte(0)
 	dummy4 := byte(0)
-	for i, _ := range data {
+	for i := range data {
 		result[i] = data[i]
 		result[i] = encode8(result[i], dummy)
 		result[i] = encode8(result[i], dummy2)
@@ -81,7 +81,7 @@ func Decrypt(data, key []byte) []byte {
 	dummy3 := byte(0)
 	dummy4 := byte(0)
 	ndummy := byte(0)
-	for i, _ := range data {
+	for i := range data {
 		result[i] = data[i]
 		ndummy = data[i]
 		for j := len(key) - 1; j >= 0; j-- {
